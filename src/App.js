@@ -21,15 +21,17 @@ let peopleList = [
   }
 ];
 
-const OnClick = ()=>{
-  alert("Hello");
-}
+// const OnClick = ()=>{
+//   alert("Hello");
+// }
 
 function App() {
   
   return (
     <div className="App">
       <header className="App-header">
+      {/*inline styling using attributes with style at one place*/}
+      <p style={{color:'yellow', fontSize:'Verdana'}}>There is some inline styles </p>                                                 
       {/* <Greeting name="Deba" noOfMessages={10}/> */}
       {/* <Greeting person={{name:"Deba",noOfMessages:10}}/> */}
       <Greeting person={{noOfMessages:10}}/>
