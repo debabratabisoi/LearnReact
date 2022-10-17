@@ -7,7 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Greeting />
+      {/* <Greeting name="Deba" noOfMessages={10}/> */}
+      <Greeting person={{name:"Deba",noOfMessages:100}}/>
         
         <img src={logo} className="App-logo" alt="logo" />
         {/* <p>
