@@ -8,8 +8,22 @@ let peopleList = [
     name:"John",
     age:34,
     hairColor:"Brown"
+  },
+  {
+    name:"Soumya",
+    age:35,
+    hairColor:"Red"
+  },
+  {
+    name:"Deba",
+    age:35,
+    hairColor:"Black"
   }
 ];
+
+const OnClick = ()=>{
+  alert("Hello");
+}
 
 function App() {
   
@@ -20,6 +34,9 @@ function App() {
       {/* <Greeting person={{name:"Deba",noOfMessages:10}}/> */}
       <Greeting person={{noOfMessages:10}}/>
       <PeopleList people={peopleList}/>  
+      {/* <button onClick={OnClick}>Click Me!</button> */}
+
+      <button onClick={()=>{alert("Hello Anonymous");}}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
         {/* <p>
           This is so {adjective}
