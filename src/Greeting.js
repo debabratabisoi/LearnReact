@@ -1,11 +1,17 @@
 import React from "react";
-// with arrow function syntax
+// with arrow function syntax, param would be same as argument name
 export const Greeting = ({person}) =>{
+    const {name, noOfMessages} = person;
+    // retur null if no name was passed
+    if(!name) return null;
     //const {name, noOfMessages} = props; // the destructing name should be exactly as it is defined inside the greeting component from App.js
     //alternatively we can declare the arguments inside the function call in array method syntax
     // or we can pass an object and destruct that and use the members
-    const {name, noOfMessages} = person;
     const isMorning = (new Date()).getHours() < 12;
+    //change the greeting header
+    let greetingHeader = isMorning
+        ? <h3>Good Morning {name}!</h3> 
+        : <h3>Good Evening {name}!</h3>;
     
     //one way is to with the <div>
     // return isMorning
@@ -31,14 +37,14 @@ export const Greeting = ({person}) =>{
     return isMorning
     ? (
         <>
-            <h3>Good Morning {name}!</h3>
+            <h3>{greetingHeader}</h3>
             <p> You have {noOfMessages} new messages</p>
         </>
     )
     : (
         <>
-            <h3>Good Evening {}!</h3>
-            <p> You have {} new messages</p>
+            <h3>Good Evening {person.name}!</h3>
+            <p> You have {person.noOfMessages} new messages</p>
         </>
     );
     
