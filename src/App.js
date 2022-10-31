@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { Greeting } from './Greeting';
 import { PeopleList } from './PeopleList';
+import { CounterButton } from './CounterButton';
 
-let peopleList = [
+/*let peopleList = [
   {
     name:"John",
     age:34,
@@ -19,7 +20,7 @@ let peopleList = [
     age:35,
     hairColor:"Black"
   }
-];
+];*/
 
 // const OnClick = ()=>{
 //   alert("Hello");
@@ -30,28 +31,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      {/*inline styling using attributes with style at one place*/}
-      <p style={{color:'yellow', fontSize:'Verdana'}}>There is some inline styles </p>                                                 
-      {/* <Greeting name="Deba" noOfMessages={10}/> */}
-      {/* <Greeting person={{name:"Deba",noOfMessages:10}}/> */}
-      <Greeting person={{noOfMessages:10}}/>
-      <PeopleList people={peopleList}/>  
-      {/* <button onClick={OnClick}>Click Me!</button> */}
-
-      <button onClick={()=>{alert("Hello Anonymous");}}>Click Me!</button>
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>
-          This is so {adjective}
-          {greetingElement}// this is old JS syntax
-        </p> */}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CounterButton/>
       </header>
     </div>
   );
