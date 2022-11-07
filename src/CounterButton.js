@@ -1,14 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // This example is to save the state of the button click
 // use the useState hook for state manipulation
-export const CounterButton = () =>{
+export const CounterButton = ({numberOfClicks, onIncrement}) =>{
+    useEffect(()=>{
+        console.log('useEffect called!');
+        //if you called onIncrement here, it will go to an infinite loop, So be careful while updating state over here.
+    }, []);
+    // it also called same amount of time as the useEffect, but useEffect can be manipulated with 2nd Array argument. if we pass empty array over there, it only called on the first attempt
+    console.log('Counter Button Clicked!');
     //numberOfClicks: current value of the state , setNumberOfClicks : changed value of the state (method to set the click counter)
     // 0: initial counter
-    const [numberOfClicks, setNumberOfClicks] = useState(0);
-    const increment = ()=>{
-        setNumberOfClicks(numberOfClicks + 1);
-    }
+    // const [numberOfClicks, setNumberOfClicks] = useState(0);
+    // const increment = ()=>{
+    //     setNumberOfClicks(numberOfClicks + 1);
+    // }
 
     // if we use let instead of const what happens, it works
     // let [numberOfClicks, setNumberOfClicks] = useState(0);
@@ -26,7 +32,7 @@ export const CounterButton = () =>{
     return(
         <>
             <p>You have clicked the counter button {numberOfClicks} times</p>
-            <button onClick={increment}>Click Me!</button>
+            <button onClick={onIncrement}>Click Me!</button>
         </>
     )
 }
